@@ -3,6 +3,7 @@
 
 // Variables
 const userInputValue = document.getElementById("user-input");
+const check = document.getElementById("user-input").required = true;
 const getBtnEl = document.getElementById("btn-cta");
 const getTimerEl = document.getElementById("timer");
 const getSecondsEl = document.getElementById("seconds");
@@ -14,6 +15,7 @@ window.onload = function(){
 // Function to run when btn clicked
 const displayInputValue = function () {
   getBtnEl.addEventListener("click", function () {
+    //userInputValue.setAttribute("required", ""); 
       startTimer(userInputValue.value, userInputValue, getSecondsEl)
   });
 };
@@ -21,17 +23,16 @@ const displayInputValue = function () {
 displayInputValue();
 
 // Timer function
-const startTimer = function(durationValue, focusValue, displayEl) {
-    // Remove the letters
-   const removeLetterInput = focusValue.value ='';
-   const removeLetterOnFocus = focusValue.focus(removeLetterInput)
+const startTimer = function(durationValue, clearInput, displayEl) {
    // Check conditions if user has entered a number above 0 or a number has been entered otherwise run the interval function;
     if (!durationValue || durationValue == 0) {
             displayEl.textContent = "Enter any numbers above 1";
-            removeLetterOnFocus;
+            clearInput.value ='';
+            clearInput.focus()
         } else if (isNaN(durationValue)) {
             displayEl.textContent = "Enter numbers only, letters are not allowed!";
-            removeLetterOnFocus;
+            clearInput.value ='';
+            clearInput.focus()
         } else {
             // If it pases the conditions then execute timer
             const interval = setInterval(function () {
