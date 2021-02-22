@@ -52,7 +52,7 @@ const startTimer = function(durationValue, clearInput, displayEl) {
                     userInputValue.value = '';
                     displayEl.textContent = "CountDown Completed!";
                     displayEl.style.color = 'yellow';
-                    setTimeout(refresh, 2000)
+                    setTimeout(refresh, 1200)
                 } else {
                     --durationValue;
         } 
