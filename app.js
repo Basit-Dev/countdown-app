@@ -38,7 +38,6 @@ const startTimer = function(durationValue, focusValue, displayEl) {
             // Convert durationValue which is a string to a integer
             seconds = parseInt(durationValue);
             // Add zero if seconds are below 10
-            seconds = seconds < 10 ? "0" + seconds : seconds;
             // Display seconds in the DOM
             displayEl.textContent = seconds;
             // If seconds is zero then stop the timer otherwise start countdown every second
