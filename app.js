@@ -22,6 +22,11 @@ const displayInputValue = function () {
 
 displayInputValue();
 
+// Refresh the page after 3 secs when countdown completes
+const refresh = function() {
+    location.reload();
+}
+
 // Timer function
 const startTimer = function(durationValue, clearInput, displayEl) {
    // Check conditions if user has entered a number above 0 or a number has been entered otherwise run the interval function;
@@ -47,6 +52,7 @@ const startTimer = function(durationValue, clearInput, displayEl) {
                     userInputValue.value = '';
                     displayEl.textContent = "CountDown Completed!";
                     displayEl.style.color = 'yellow';
+                    setTimeout(refresh, 3000)
                 } else {
                     --durationValue;
         } 
