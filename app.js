@@ -15,7 +15,7 @@ window.onload = function(){
 // Function to run when btn clicked
 const displayInputValue = function () {
   getBtnEl.addEventListener("click", function () {
-    //userInputValue.setAttribute("required", ""); 
+    
       startTimer(userInputValue.value, userInputValue, getSecondsEl)
   });
 };
@@ -53,5 +53,3 @@ const startTimer = function(durationValue, clearInput, displayEl) {
     }, 1000);
     }
 }
- 
-
