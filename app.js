@@ -55,6 +55,7 @@ const startTimer = function(durationValue, clearInput, displayEl) {
                     setTimeout(refresh, 1200)
                 } else {
                     --durationValue;
+                    userInputValue.disabled = true;
         } 
     }, 1000);
     }
